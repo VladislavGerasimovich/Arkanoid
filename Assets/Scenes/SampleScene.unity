@@ -320,8 +320,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2463944475647b4c9f0363ea29e5fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7403439926730404486, guid: d02ec84271f160b4db66becac0fb3505, type: 3}
-  _offsetY: 0
 --- !u!1 &308465879
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,7 +921,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.3
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1206,7 +1204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc085b298c3d694da710f3469dd02d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ufos:
+  _ufoesData:
   - {fileID: 11400000, guid: a4c3fdca5bf0362469edc680799ecbbc, type: 2}
   - {fileID: 11400000, guid: da01da7c89bfeaa4f85549616bd1abe2, type: 2}
 --- !u!114 &1239550326
