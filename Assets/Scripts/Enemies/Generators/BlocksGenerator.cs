@@ -1,9 +1,8 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlocksGenerator : Generator
+public class BlocksGenerator : MonoBehaviour, IGenerator
 {
     [SerializeField] private List<BlockData> _blocks;
     [SerializeField] private float _startPositionX;
@@ -41,7 +40,7 @@ public class BlocksGenerator : Generator
         Generate();
     }
 
-    public override void Generate()
+    public void Generate()
     {
         for (int i = 0; i < _blocks.Count; i++)
         {
@@ -63,7 +62,7 @@ public class BlocksGenerator : Generator
         }
     }
 
-    public override void RestoreAll()
+    public void RestoreAll()
     {
         BlocksAlife = _blocks.Count;
 
@@ -73,7 +72,7 @@ public class BlocksGenerator : Generator
         }
     }
 
-    public override void OnDied(int score)
+    public void OnDied(int score)
     {
         ScoreReceived?.Invoke(score);
         BlocksAlife--;

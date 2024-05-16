@@ -1,9 +1,8 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UfoGenerator : Generator
+public class UfoGenerator : MonoBehaviour, IGenerator
 {
     [SerializeField] private List<UfoData> _ufoesData;
 
@@ -25,7 +24,7 @@ public class UfoGenerator : Generator
         Generate();
     }
 
-    public override void Generate()
+    public void Generate()
     {
         for (int i = 0; i < _ufoesData.Count; i++)
         {
@@ -40,7 +39,7 @@ public class UfoGenerator : Generator
         }
     }
 
-    public override void RestoreAll()
+    public void RestoreAll()
     {
         UfoAlife = _ufoesData.Count;
 
@@ -50,7 +49,7 @@ public class UfoGenerator : Generator
         }
     }
 
-    public override void OnDied(int score)
+    public void OnDied(int score)
     {
         ScoreReceived?.Invoke(score);
         UfoAlife--;

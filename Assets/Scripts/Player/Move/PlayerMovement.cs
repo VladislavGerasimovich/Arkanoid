@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerInput))]
@@ -18,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _startPosition = transform.position;
         _borderPosition = 2.65f;
-        _moveSpeed = 5f;
+        _moveSpeed = 10f;
         _playerInput = GetComponent<PlayerInput>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -37,7 +35,8 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         float _positionX = _rigidbody.position.x + _playerInput.Direction * _moveSpeed * Time.deltaTime;
-        _positionX = Mathf.Clamp(_positionX, -_borderPosition + (_spriteRenderer.size.x / 2), _borderPosition - (_spriteRenderer.size.x / 2));
+        int positionDivider = 2;
+        _positionX = Mathf.Clamp(_positionX, -_borderPosition + (_spriteRenderer.size.x / positionDivider), _borderPosition - (_spriteRenderer.size.x / positionDivider));
         _rigidbody.MovePosition(new Vector2(_positionX, _rigidbody.position.y));
     }
 }
